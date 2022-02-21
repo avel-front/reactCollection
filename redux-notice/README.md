@@ -121,7 +121,7 @@ import { ADD_TODO, REMOVE_TODO } from '../actionTypes'
 
 ### Action creators  
 
-#### **`Actions creators`** - это функции, которые возвращают action.  
+ **`Actions creators`** - это функции, которые возвращают action.  
   
 ```
 function addTodo(text) {
