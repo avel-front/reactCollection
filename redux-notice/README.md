@@ -16,7 +16,7 @@ function foo(action, type) {}
 
 Нечистые reducer'ы формально будут обработаны, но строго не рекомендуется!  
   
-## Пример  
+## Краткий разбор  
 
 ```
 import {createStore} from 'redux'
@@ -83,9 +83,16 @@ store.dispatch({type: 'DECREMENT'})
 
 Action'ы - это простые объекты, которые имеют специальное поле (type, payload, error, meta). Они являются единственным источником информации для store, поскольку передаются в него через dispatch.  
 
+
 ```
 store.dispatch(  {type: 'INCREMENT'}  )
 ```  
+  
+Хранить action'ы лучше в actionTypes.js. Импортировать можно так:  
+
+```
+import { ADD_TODO, REMOVE_TODO } from '../actionTypes'
+```
 
 
 ### Специальные поля:  
