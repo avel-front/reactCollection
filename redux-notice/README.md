@@ -55,26 +55,34 @@ let store = createStore(counter)
 
 
 ```
-store.subscribe(() =>
-    console.log(store.getState(reducer))
-)
+const store = createStore(yourReducer)
 ```
 
-**`subscribe`** - это метод, который отвечает за обновление UI при изменении состояния.  
-Не рекомендуется использовать метод напрямую, лучше React-Redux.  
+**`subscribe`** - это метод, который передает в Store функцию-подписчик.  
+
+```
+const store = createStore(yourReducer)
+
+const unsubscribe = store.subscribe(() => console.log(store.getState()))
+
+store.dispatch(actionCreator1('текст1'))
+store.dispatch(actionCreator2(0))
+store.dispatch(actionCreator3(VisibilityFilters.SHOW_COMPLETED))
+
+unsubscribe()
+```
 
 **`dispatch`** - это метод, который позволяет отправить action в store.  
+
+```
+store.dispatch()
+```
 
 **`getState`** - это метод, который позволяет получить последнее значение из reducer'а.
 
 ```
-store.dispatch({type: 'INCREMENT'})
-store.dispatch({type: 'INCREMENT'})
-store.dispatch({type: 'DECREMENT'})
+store.getState()
 ```
-
-
-Вызов action - единственный способ изменить внутренний state.  
 
 ____
 
@@ -93,9 +101,10 @@ ____
 
 ### Action
 
-**`Action'ы`** - это простые объекты, которые имеют специальное поле (type, payload, error, meta). Они являются единственным источником информации для store, поскольку передаются в него через dispatch.  
+**`Action'ы`** - это простые объекты, которые имеют специальное поле (type, payload, error, meta). Это единственный источник информации для store и единственный способ изменить внутренний state.
 
-Они могут описать только то, что произошло, но не могут описать, как именно изменяется state приложения. 
+Action - описывают то, что произошло.
+Reducer - описывает то, что как именно изменяется state.
 
 
 ```
