@@ -1,4 +1,4 @@
-# Как устроен Redux  
+# Памятка
 
 
 
@@ -51,7 +51,14 @@ export function counter(state = 0, action) {
 let store = createStore(counter)
 ```  
   
-**`store`** - это хранилише для state. API: subscribe, dispatch, getState.
+**`store`** - это хранилише для state, он ОДИН. API: subscribe, dispatch, getState.
+
+- содержит состояние приложения (application state);
+- предоставляет доступ к состоянию с помощью getState();
+- предоставляет возможность обновления состояния с помощью dispatch(action);
+- обрабатывает отмену регистрации слушателей с помощью функции, возвращаемой subscribe(listener).
+
+
 
 
 ```
