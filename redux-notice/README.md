@@ -51,7 +51,8 @@ export function counter(state = 0, action) {
 let store = createStore(counter)
 ```  
   
-**`store`** - это хранилише для state, он ОДИН. API: subscribe, dispatch, getState.
+**`store`** - это хранилише для state, он ОДИН. Вместо нескольких store используют композицию reducer'ов (делегирование, срез и т.д.)
+API: subscribe, dispatch, getState.
 
 - содержит состояние приложения (application state);
 - предоставляет доступ к состоянию с помощью getState();
