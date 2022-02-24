@@ -66,7 +66,7 @@ API: subscribe, dispatch, getState.
 const store = createStore(yourReducer)
 ```
 
-**`subscribe`** - это метод, который передает в Store функцию-подписчик.  
+**`subscribe`** - это метод, который передает в store функцию-подписчик.  
 
 ```
 const store = createStore(yourReducer)
@@ -111,7 +111,7 @@ ____
 
 **`Action'ы`** - это простые объекты, которые имеют специальное поле (type, payload, error, meta). Это единственный источник информации для store и единственный способ изменить внутренний state.
 
-Action - описывают то, что произошло.
+Action - описывают то, что произошло.  
 Reducer - описывает то, что как именно изменяется state.
 
 
@@ -185,6 +185,11 @@ store.dispatch( {type: 'INCREMENT'} )
 ```
 bindActionCreators()
 ```
+
+____
+
+
+
 
 
 
