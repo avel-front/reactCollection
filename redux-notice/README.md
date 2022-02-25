@@ -225,7 +225,7 @@ ____
 
 `Порядок`:  
 
-1. actionTypes, actionCreators, reducer, rootReducer, store, subscribe + getState (test),
+1. actionTypes, actionCreators, reducer, rootReducer, store (проверка subscribe + getState),
 2. компоненты - представления для UI,
 3. компоненты - контейнеры для связи представлений со store.  
 
