@@ -229,7 +229,7 @@ ____
 VisibleTodoList требуется вычислить todos для передачи в TodoList, так что нам нужно определить функцию, которая фильтрует state.todos согласно state.visibilityFilter, и использовать ее в mapStateToProps.
 ```
 
-`mapDispatchToProps` - функция, которая получает dispatch() и возвращает callback props, который можно вставить в представление.  
+`mapDispatchToProps` - функция, которая принимает dispatch() и возвращает callback props, который можно вставить в представление.  
   
 ```
 Мы хотим, чтобы контейнер VisibleTodoList вставил prop onTodoClick в представление TodoList и еще мы хотим, чтобы onTodoClick отправлял TOGGLE_TODO экшен
