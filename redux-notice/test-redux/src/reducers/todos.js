@@ -1,6 +1,5 @@
 
 
-// reducer
 const todos = (state = [], action) => {
     switch (action.type) {
         case "ADD_TODO":
@@ -12,10 +11,9 @@ const todos = (state = [], action) => {
                     completed: false
                 }
             ]
-
         case "TOGGLE_TODO":
             return state.map(todo =>
-            todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
+            todo.id === action.id ? {...todo, completed: !todo.completed} : todo
             )
 
         default:
@@ -23,5 +21,4 @@ const todos = (state = [], action) => {
     }
 }
 
-export default todos;
-
+export default todos
